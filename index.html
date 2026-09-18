@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سات سوفت - متجر الرسيفرات والسيرفرات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { background-color: #0d0d0d; color: #f1f1f1; line-height: 1.6; }
+        
+        /* الهيدر */
+        header { background: #161616; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 20px; font-weight: bold; color: #00d2ff; text-decoration: none; }
+        nav a { color: #fff; text-decoration: none; margin-left: 15px; font-size: 14px; transition: 0.3s; }
+        nav a:hover { color: #00d2ff; }
 
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+        .section-box { background: #161616; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+        .section-title { font-size: 20px; color: #00d2ff; margin-bottom: 20px; border-right: 4px solid #00d2ff; padding-right: 10px; }
+
+        /* شبكة المنتجات (الرسيفرات) */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .card { background: #1f1f1f; border-radius: 10px; padding: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 210, 255, 0.2); }
+        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; background: #121212; }
+        .product-name { font-size: 14px; color: #fff; margin-bottom: 5px; }
+        .price { color: #00ff88; font-weight: bold; margin-bottom: 10px; font-size: 14px; }
+        
+        /* السلايدر (للسيرفرات) */
+        .slider-container { position: relative; overflow: hidden; width: 100%; padding: 10px 0; }
+        .slider-track { display: flex; gap: 20px; transition: transform 0.6s ease-in-out; }
+        .slider-track .card { flex: 0 0 230px; max-width: 230px; }
+
+        /* الأزرار */
+        .btn { background: linear-gradient(135deg, #28a745, #20c997); color: #fff; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; margin-top: auto; }
+        .btn:hover { background: linear-gradient(135deg, #218838, #17a589); transform: scale(1.03); }
+
+        /* التواصل والفوتر */
+        .social-links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+        .social-btn { background: #25d366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; }
+        .social-btn.fb { background: #1877f2; }
+        .social-btn.tg { background: #0088cc; }
+        
+        footer { text-align: center; padding: 20px; color: #888; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">سات سوفت (Sat-Soft)</a>
+        <nav>
+            <a href="#receivers">الرسيفرات</a>
+            <a href="#servers">سيرفرات IPTV</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- قسم الرسيفرات وأجهزة الاستقبال -->
+        <div id="receivers" class="section-box">
+            <h2 class="section-title">متجر الرسيفرات وأجهزة الاستقبال</h2>
+            <div class="products-grid">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544979590-33f375005b4e?auto=format&fit=crop&w=300&q=80" alt="سيناتور S4040 V2">
+                    <h4 class="product-name">سيناتور S4040 V2</h4>
+                    <div class="price">1550 جنيه</div>
+                    <button class="btn" onclick="orderWhatsApp('سيناتور S4040 V2', '1550 جنيه')">طلب الرسيفر</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544979590-33f375005b4e?auto=format&fit=crop&w=300&q=80" alt="سيناتور القبطان Q2">
+                    <h4 class="product-name">سيناتور القبطان Q2</h4>
+                    <div class="price">3900 جنيه</div>
+                    <button class="btn" onclick="orderWhatsApp('سيناتور القبطان Q2', '3900 جنيه')">طلب الرسيفر</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544979590-33f375005b4e?auto=format&fit=crop&w=300&q=80" alt="سيناتور بلاتنيوم P2">
+                    <h4 class="product-name">سيناتور بلاتنيوم P2</h4>
+                    <div class="price">2600 جنيه</div>
+                    <button class="btn" onclick="orderWhatsApp('سيناتور بلاتنيوم P2', '2600 جنيه')">طلب الرسيفر</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544979590-33f375005b4e?auto=format&fit=crop&w=300&q=80" alt="سيناتور برايم Z1">
+                    <h4 class="product-name">سيناتور برايم Z1</h4>
+                    <div class="price">1800 جنيه</div>
+                    <button class="btn" onclick="orderWhatsApp('سيناتور برايم Z1', '1800 جنيه')">طلب الرسيفر</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- قسم سيرفرات الشيرنج و IPTV المتحرك -->
+        <div id="servers" class="section-box">
+            <h2 class="section-title">اشتراكات سيرفرات الشيرنج و IPTV</h2>
+            <div class="slider-container">
+                <div class="slider-track" id="serverSliderTrack">
+                    
+                    <div class="card">
+                        <img src="https://i.top4top.io/p_3906lw0tw1.jpg" alt="سيرفر ابولو 12 شهر">
+                        <h4 class="product-name">سيرفر ابولو 12 شهر</h4>
+                        <div class="price">750 جنيه</div>
+                        <button class="btn" onclick="orderWhatsApp('سيرفر ابولو 12 شهر', '750 جنيه')">طلب الاشتراك</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTytdiY9LyQLpObj39uSUbp6EOblQuRBdvQQ8OgUuXlZQ&s=10" alt="ابولو vip1 3 شهور">
+                        <h4 class="product-name">ابولو vip1 3 شهور</h4>
+                        <div class="price">700 جنيه</div>
+                        <button class="btn" onclick="orderWhatsApp('ابولو vip1 3 شهور', '700 جنيه')">طلب الاشتراك</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbUMCMomkmVvRlC0it8IbcZiXRagJvndhyZdYBxaosjA&s=10" alt="سيرفر نوفا الاصلي 12 شهر">
+                        <h4 class="product-name">سيرفر نوفا الاصلي 12 شهر</h4>
+                        <div class="price">500 جنيه</div>
+                        <button class="btn" onclick="orderWhatsApp('سيرفر نوفا الاصلي 12 شهر', '500 جنيه')">طلب الاشتراك</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9_fyE0bU6sGwARkjR--aJ6B1ozI0DZZXaDBPq37vFYw&s=10" alt="سيرفر إكس 12 شهر">
+                        <h4 class="product-name">سيرفر إكس 12 شهر</h4>
+                        <div class="price">550 جنيه</div>
+                        <button class="btn" onclick="orderWhatsApp('سيرفر إكس 12 شهر', '550 جنيه')">طلب الاشتراك</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم منصات التواصل الاجتماعي -->
+        <div id="contact" class="section-box" style="text-align: center;">
+            <h2 class="section-title" style="border: none; text-align: center; padding: 0;">تابعنا على منصات التواصل الاجتماعي</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Control.shoping" target="_blank" class="social-btn fb">فيسبوك</a>
+                <a href="https://chat.whatsapp.com/FXESaTz6CNr1vTsCNxnvGw" target="_blank" class="social-btn">جروب واتساب</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        جميع الحقوق محفوظة لمجموعة العمل 2027 | تصميم م/ محمد ابن أبو علي[cite: 4]
+    </footer>
+
+    <script>
+        function orderWhatsApp(name, price) {
+            const phone = "201119399195";
+            const text = `مرحباً، أريـد طلب هذا المنتج:\n🔹 المنتج: ${name}\n💰 السعر: ${price}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // تحريك السلايدر تلقائياً
+        const track = document.getElementById('serverSliderTrack');
+        let index = 0;
+        setInterval(() => {
+            const cards = track.querySelectorAll('.card');
+            if(cards.length === 0) return;
+            const width = cards[0].offsetWidth + 20;
+            index = (index + 1) % (cards.length - 1);
+            track.style.transform = `translateX(${index * width}px)`;
+        }, 3500);
+    </script>
+</body>
+</html>
